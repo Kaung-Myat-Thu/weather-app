@@ -62,7 +62,6 @@ export default {
           .then((res) => res.json())
           .then((result) => {
             this.weather = result;
-            console.log(result);
           });
 
         this.query = "";
