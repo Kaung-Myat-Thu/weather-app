@@ -40,11 +40,17 @@
     >
       This city will be add soon.
     </div>
+    <Footer />
   </main>
 </template>
 
 <script>
+import Footer from "./Footer.vue";
+
 export default {
+  components: {
+    Footer,
+  },
   data() {
     return {
       api_key: "8b6aafdbe8f6f07d9e64dd2d317be3c8",
