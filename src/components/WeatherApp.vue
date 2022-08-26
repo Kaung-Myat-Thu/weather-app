@@ -1,8 +1,10 @@
 <template>
   <main
-    class="weather h-screen w-screen"
+    class="bg-gradient-to-r from-cyan-300 to-blue-300 h-screen w-screen"
     :class="
-      typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''
+      typeof weather.main != 'undefined' && weather.main.temp > 16
+        ? 'bg-gradient-to-r from-orange-300 to-red-300'
+        : ''
     "
   >
     <div>
@@ -17,10 +19,10 @@
 
     <div
       v-if="typeof weather.main != 'undefined'"
-      class="text-center my-8 text-blue-500 font-semibold font-sans"
+      class="text-center my-8 text-gray-700 font-semibold font-sans"
     >
       <div>
-        <div class="text-2xl my-2">
+        <div class="text-2xl my-2 italic">
           {{ weather.name }}, {{ weather.sys.country }}
         </div>
         <div class="text-lg">{{ setDate() }}</div>
@@ -102,15 +104,4 @@ export default {
   },
 };
 </script>
-<style>
-.weather {
-  background-image: url("../assets/cold-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.weather.warm {
-  background: url("../assets/warm-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
+<style></style>
